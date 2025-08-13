@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movies Library - Cinesphere</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div id="app">
+      <div class="flex flex-col" style="flex: 1">
+        <!-- Navbar Section -->
+        <div class="navbar flex flex-col">
+          <div class="mobile-ver">
+            <div class="logo">
+              <img src="./assets/logo.png" class="logo" alt="cinesphere logo" />
+            </div>
+            <div class="links">
+              <a class="link router-link-active" href="">Home</a>
+              <a class="link router-link-exact-active" href=""
+                >Find your Movie</a
+              >
+              <a class="btn-contact" href="">Contact</a>
+            </div>
+          </div>
+
+          <!-- Hero Section -->
+          <div class="content-wrapper">
+            <h1>Discover Amazing Movies</h1>
+            <div class="input-wrap">
+              <input
+                type="text"
+                placeholder="Search by name and find the best movies..."
+                onchange="searchChange(event)"
+              />
+              <div class="search-wrapper">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Filter Section -->
+        <div id="filter">
+          <div>
+            <h1 class="search-info">
+              <span class="black-txt">Search results</span>
+              <span class="searchName"></span>
+            </h1>
+          </div>
+          <div class="price-filter">
+            <select
+              name="movieSort"
+              id="movieSort"
+              onchange="sortChange(event)"
+            >
+              <option disabled selected value="">Sort by year</option>
+              <option value="newest">Newest to Oldest</option>
+              <option value="oldest">Oldest to Newest</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Movie Display Section -->
+        <section class="search">
+          <div class="movies">
+            <div class="movie__night--wrapper">
+              <!-- Placeholder for movie night SVG -->
+              <div class="movie__night--img">🎬</div>
+
+              <p class="movie__night--title">
+                <span>Cinesphere</span> Movie Discovery Engine
+              </p>
+              <p class="movie__night--subtitle">
+                Instant movie search. Every film, every detail, lightning fast.
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Footer Section -->
+      <footer>
+        <div class="footer-container">
+          <div class="footer-content">
+            <div class="footer-section footer-brand">
+              <div class="brand-logo">
+                <span class="logo-icon">🎬</span>
+                <span class="brand-name">Cinesphere</span>
+              </div>
+              <p class="brand-description">
+                The world's most comprehensive movie discovery engine. Find any
+                film instantly with lightning-fast results and detailed
+                information.
+              </p>
+              <div class="social-links">
+                <a href="#" class="social-link" aria-label="Twitter">🐦</a>
+                <a href="#" class="social-link" aria-label="Facebook">📘</a>
+                <a href="#" class="social-link" aria-label="Instagram">📷</a>
+                <a href="#" class="social-link" aria-label="YouTube">📺</a>
+              </div>
+            </div>
+
+            <div class="footer-section">
+              <h3>Discover</h3>
+              <ul class="footer-links">
+                <li><a href="#">Popular Movies</a></li>
+                <li><a href="#">New Releases</a></li>
+                <li><a href="#">Top Rated</a></li>
+                <li><a href="#">Coming Soon</a></li>
+                <li><a href="#">Genres</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-section">
+              <h3>Support</h3>
+              <ul class="footer-links">
+                <li><a href="#">Help Center</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">API Documentation</a></li>
+                <li><a href="#">Bug Reports</a></li>
+                <li><a href="#">Feature Requests</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-section">
+              <div class="newsletter">
+                <h3>Stay Updated</h3>
+                <p
+                  style="
+                    color: rgba(255, 255, 255, 0.7);
+                    margin-bottom: 1rem;
+                    font-size: 0.9rem;
+                  "
+                >
+                  Get the latest movie updates and recommendations delivered to
+                  your inbox.
+                </p>
+                <form class="newsletter-form">
+                  <input
+                    type="email"
+                    placeholder="Enter your email"
+                    class="newsletter-input"
+                    required
+                  />
+                  <button type="submit" class="newsletter-btn">Send</button>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-bottom">
+            <div class="copyright">© 2025 Cinesphere. All rights reserved.</div>
+            <div class="footer-legal">
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Service</a>
+              <a href="#">Cookie Policy</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
