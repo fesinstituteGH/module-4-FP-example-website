@@ -25,6 +25,17 @@ body {
   overflow-x: hidden;
 }
 
+select {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  appearance: none; /* removes default arrow for custom styling */
+}
+
+select option {
+  background-color: #fff;
+  color: #000;
+}
 a {
   cursor: not-allowed;
 }
